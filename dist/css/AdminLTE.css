@@ -288,6 +288,15 @@ a:focus {
   font-weight: 300;
   overflow: hidden;
 }
+
+.body .admin-dash {
+  font-size: 20px;
+line-height: 50px;
+text-align: center;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-weight: 300;
+display: none;
+}
 .main-header .logo .logo-lg {
   display: block;
 }
