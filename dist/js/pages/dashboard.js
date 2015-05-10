@@ -6,6 +6,8 @@
  **/
 "use strict";
 
+var apiAddr = 'http://localhost:8000/js/api.json';
+
 $(function () {
 
   //Make the dashboard widgets sortable Using jquery UI
@@ -217,11 +219,21 @@ function doWork(number,sensor,pressure,timestamp) {
  var sensor='assasins creed';
  var pressure='2 bar';
  var timestamp=new Date();
-function apicall(){
- doWork(number,sensor,pressure,timestamp);
- setTimeout(apicall, 1000);
-} 
-apicall();
+function apicall() {
+    doWork(number, sensor, pressure, timestamp);
+    
+
+    $.get(apiAddr,function(data){
+      console.log(data);
+      console.log('fhdfds');
+    });
+
+
+    // setTimeout(apicall, 1000);
+}
+
+$(document).ready(apicall);
+
 
   /* BOX REFRESH PLUGIN EXAMPLE (usage with morris charts) */
   $("#loading-example").boxRefresh({
