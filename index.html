@@ -464,7 +464,7 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <div class="table-responsive">
-                    <table class="table no-margin">
+                    <table class="table no-margin" id="pressure-table">
                       <thead>
                         <tr>
                           <th>#</th>
@@ -474,19 +474,13 @@
                         </tr>
                       </thead>
                       <tbody id="table-body">
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                          <td>Call of Duty IV</td>
-                          <td><span class="label label-success">Shipped</span></td>
-                          <td><div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div></td>
-                        </tr>
                       </tbody>
                     </table>
                   </div><!-- /.table-responsive -->
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
-                  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                  <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
+                  <div onclick="exportpdf()" class="btn btn-sm btn-info btn-flat pull-right">Export as pdf</div>
+                  <!-- <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
                 </div><!-- /.box-footer -->
               </div><!-- /.box -->
         </div>
@@ -821,6 +815,12 @@
     
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="dist/js/pages/dashboard.js" type="text/javascript"></script>    
+    <script src="dist/js/export/jspdf/libs/sprintf.js" type="text/javascript"></script>    
+    <script src="dist/js/export/jspdf/jspdf.js" type="text/javascript"></script>    
+    <script src="dist/js/export/jspdf/libs/base64.js" type="text/javascript"></script>    
+    <script src="dist/js/export/html2canvas.js" type="text/javascript"></script>    
+    <script src="dist/js/export/jquery.base64.js" type="text/javascript"></script>    
+    <script src="dist/js/export/tableExport.js" type="text/javascript"></script>    
     
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>

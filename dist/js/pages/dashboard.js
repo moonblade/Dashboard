@@ -6,7 +6,12 @@
  **/
 "use strict";
 
-var apiAddr = 'http://localhost:8000/js/api.json';
+var apiAddr = 'https://api.spark.io/v1/devices/54ff6a066667515138391567/temperature?access_token=9322fc48e9621e17d7a150a53fad65a5905b8afb';
+
+function exportpdf(){
+  console.log("export as pdf");
+  $('#pressure-table').tableExport({type:'pdf',escape:'false'});
+}
 
 $(function () {
 
@@ -211,25 +216,28 @@ var saledonot = new Morris.Donut({
 
 
 function doWork(number,sensor,pressure,timestamp) {
- console.log("every second");
- $("#table-body").prepend('<tr><td><a href="pages/examples/invoice.html">'+number+'</a></td><td>'+sensor+'</td><td><span class="label label-success">'+pressure+'</span></td><td><div class="sparkbar" data-color="#00a65a" data-height="20">'+timestamp+'</div></td></tr>');
+ $("#table-body").prepend('<tr><td>'+number+'</td><td>'+sensor+'</td><td>'+pressure+'</td><td><div class="sparkbar" data-color="#00a65a" data-height="20">'+timestamp+'</div></td></tr>');
 }
 
- var number=50;
- var sensor='assasins creed';
- var pressure='2 bar';
- var timestamp=new Date();
+ var number=0;
+ var sensor='Sensor 1';
+ var pressure='0';
 function apicall() {
-    doWork(number, sensor, pressure, timestamp);
+    var timestamp=new Date();
     
-
     $.get(apiAddr,function(data){
       console.log(data);
-      console.log('fhdfds');
+      pressure=data.result;
+      pressure=parseInt(pressure/4094*100);
+      pressure=pressure+' %';
+      if(data != undefined)
+      {
+          number++;
+          doWork(number, sensor, pressure, timestamp);
+      }
     });
 
-
-    // setTimeout(apicall, 1000);
+    setTimeout(apicall, 5000);
 }
 
 $(document).ready(apicall);
