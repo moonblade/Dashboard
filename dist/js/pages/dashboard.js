@@ -208,12 +208,20 @@ var saledonot = new Morris.Donut({
   // });
 
 
-var repeater;
-function doWork() {
+function doWork(number,sensor,pressure,timestamp) {
  console.log("every second");
- repeater = setTimeout(doWork, 1000);
+ $("#table-body").prepend('<tr><td><a href="pages/examples/invoice.html">'+number+'</a></td><td>'+sensor+'</td><td><span class="label label-success">'+pressure+'</span></td><td><div class="sparkbar" data-color="#00a65a" data-height="20">'+timestamp+'</div></td></tr>');
 }
-doWork();
+
+ var number=50;
+ var sensor='assasins creed';
+ var pressure='2 bar';
+ var timestamp=new Date();
+function apicall(){
+ doWork(number,sensor,pressure,timestamp);
+ setTimeout(apicall, 1000);
+} 
+apicall();
 
   /* BOX REFRESH PLUGIN EXAMPLE (usage with morris charts) */
   $("#loading-example").boxRefresh({

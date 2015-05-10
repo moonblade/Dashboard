@@ -1,0 +1,4 @@
+.row .box.box-info.monitor .box-body{
+	max-height: 300px;
+	overflow-y: scroll;
+}

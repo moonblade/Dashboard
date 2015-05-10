@@ -6,6 +6,7 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css" />    
     <!-- FontAwesome 4.3.0 -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons 2.0.0 -->
@@ -358,7 +359,7 @@
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-aqua">
+              <div class="small-box bg-red">
                 <div class="inner">
                   <h3>-</h3>
                   <p>Equipment Not Found</p>
@@ -371,7 +372,7 @@
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-aqua">
+              <div class="small-box bg-green">
                 <div class="inner">
                   <h3>-</h3>
                   <p>Equipment Not Found</p>
@@ -384,7 +385,7 @@
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-aqua">
+              <div class="small-box bg-orange">
                 <div class="inner">
                   <h3>-</h3>
                   <p>Equipment Not Found</p>
@@ -453,7 +454,7 @@
           </div>
           <div class="row">
                <!-- Monitoring API -->
-              <div class="box box-info">
+              <div class="box box-info monitor">
                 <div class="box-header with-border">
                   <h3 class="box-title">Pressure Monitor</h3>
                   <div class="box-tools pull-right">
@@ -472,7 +473,7 @@
                           <th>Timestamp</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="table-body">
                         <tr>
                           <td><a href="pages/examples/invoice.html">OR9842</a></td>
                           <td>Call of Duty IV</td>
