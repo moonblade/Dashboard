@@ -189,12 +189,31 @@ $(function () {
     hideHover: 'auto'
   });
 
-  //Fix for charts under tabs
-  $('.box ul.nav a').on('shown.bs.tab', function (e) {
-    area.redraw();
-    donut.redraw();
+var saledonot = new Morris.Donut({
+    element: 'saledonot',
+    resize: true,
+    colors: ["#3c8dbc", "#f56954", "#00a65a"],
+    data: [
+      {label: "Floor 1 Pressure", value: 2},
+      {label: "Floor 2 Pressure", value: 1},
+      {label: "Floor 3 Pressure", value: 1}
+    ],
+    hideHover: 'auto'
   });
 
+  //Fix for charts under tabs
+  // $('.box ul.nav a').on('shown.bs.tab', function (e) {
+  //   area.redraw();
+  //   donut.redraw();
+  // });
+
+
+var repeater;
+function doWork() {
+ console.log("every second");
+ repeater = setTimeout(doWork, 1000);
+}
+doWork();
 
   /* BOX REFRESH PLUGIN EXAMPLE (usage with morris charts) */
   $("#loading-example").boxRefresh({
